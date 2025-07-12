@@ -1,0 +1,22 @@
+<form [formGroup]= "formSignUp">
+  <div class="form-group">
+    <label for="username">Nombre</label>
+    <input type="text" formControlName="username" class="form-control" placeholder="Enter username">
+    <label for="email">Apellido</label>
+    <input type="email" formControlName ="email" class="form-control" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password">
+  </div>
+    <div class="form-group">
+        <label for="confirmPassword">Confirmar Password</label>
+        <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+    </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<pre>
+    {{formSignUp.get('username')?.value}}
+   
+</pre>
