@@ -15,9 +15,7 @@
                     <p class="card-text">Artista: {{ disk.artist }}</p>
                     <p class="card-text">Año: {{ disk.year }}</p>
                     <p class="card-text">Descripción: {{ disk.description }}</p>
-                    <button class="btn btn-secondary btn-lg mt-5" (click)="toggleLike(disk)">
-                        {{ disk.like ? '🤍' : 'Me gusta' }}
-                    </button>
+                 <app-input [disk]="disk" (likeToggled)="onLikeToggled($event)"></app-input>
                 </div>
             </div>
         </div>
