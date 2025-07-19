@@ -1,3 +1,41 @@
 .h1{
     background-color: red;
 }
+.title-disks {
+color: #263963; 
+
+    text-align: center;
+    //color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.button1 {
+    background-color: #263963; 
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.card-body{
+    background-color:#47a5d1ad;
+    border-color: black;
+      flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+      height: 100%;
+  display: flex;
+  flex-direction: column;
+    border-color: rgba(0, 0, 0, 0.562) !important;
+}
+
+
+.card-body button {
+        background-color: #263963; // Naranja
+;
+
+  margin-top: auto;
+}

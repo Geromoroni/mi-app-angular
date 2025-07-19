@@ -1,22 +1,32 @@
-<form [formGroup]= "formSignUp">
-  <div class="form-group">
+<form [formGroup]="formSignUp" (submit)="onSubmit()">
+    <div class="form-group" [class.invalid]="formSignUp.get('username')?.invalid">
     <label for="username">Nombre</label>
-    <input type="text" formControlName="username" class="form-control" placeholder="Enter username">
-    <label for="email">Apellido</label>
-    <input type="email" formControlName ="email" class="form-control" placeholder="Enter email">
+    <input  type="text" formControlName="username" class="form-control" placeholder="Enter username">
+  </div>
+
+    <div class="form-group" [class.invalid]="formSignUp.get('email')?.invalid">
+    <label for="email">Email</label>
+    <input type="email" formControlName ="email" class="form-control" placeholder="Enter email" >
+   <div class="error-message">
+      <p *ngIf="formSignUp.get('email')?.hasError('required')">El email es requerido</p>
+      <p *ngIf="formSignUp.get('email')?.hasError('email')">El formato no es válido</p>
+    </div>
+  </div>
+  <div [class.invalid]="formSignUp.get('password')?.invalid" class="form-group">
+    <label  for="password">Password</label>
+    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password">
+  <div>
+      <p *ngIf="formSignUp.get('password')?.hasError('required')">La contraseña es requerida</p>
+      <p *ngIf="formSignUp.get('password')?.hasError('minlength')">La contraseña es debe tener mínimo 6 caracteres</p>
+
+  </div>
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password">
-  </div>
-    <div class="form-group">
         <label for="confirmPassword">Confirmar Password</label>
         <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+        <div class="error-message">
+      <p *ngIf="formSignUp.hasError('passwordMismatch')">Las contraseñas no coinciden</p>
+      </div>
     </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button [disabled]= "formSignUp.invalid" type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<pre>
-    {{formSignUp.get('username')?.value}}
-   
-</pre>

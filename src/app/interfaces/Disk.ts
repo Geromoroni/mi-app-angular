@@ -4,4 +4,5 @@ export interface Disk {
   year: number; 
   description: string;  
   image: string;
+  like?: boolean; // Propiedad opcional para indicar si le gusta
 }

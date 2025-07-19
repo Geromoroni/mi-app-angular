@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { DiskSectionComponent } from './components/disk-section/disk-section.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule
+    DiskSectionComponent
   ],
   providers: [],
+  declarations: [
+  ],
 })
 export class AppModule { }

@@ -1,25 +1,32 @@
-<h1>Discos</h1>
-<button (click)="toggleView($event)" class="btn btn-secondary btn-lg mt-5">
+<h1 class="title-disks">Discos</h1>
+<button (click)="toggleView($event)" class="button1 btn btn-secondary btn-lg mt-5">
     {{ mostrar ? 'Ocultar discos' : 'Mostrar discos' }}
 </button>
 <main>
     @if (mostrar) {
-    <ul id="list-disk" class="list-group mt-5">
+    <div class="row">
         @for (disk of disks; track disk.title) {
-        <li class="list-group-item">
-            <h2>{{ disk.title }}</h2>
-            <p>Artista: {{ disk.artist }}</p>
-            <p>Año: {{ disk.year }}</p>
-            <p>Descripción: {{ disk.description }}</p>
-            <img [src]="disk.image" alt="{{ disk.title }}" width="200">
-            <hr>
-        </li>
+        <div class="col-12 col-sm-6 mb-4">
+            <div class="card h-100">
+                <img class="card-img-top" [src]="disk.image" alt="{{ disk.title }}" width="200">
+                <div class="card-body">
+                    <h2 class="card-title">{{ disk.title }}</h2>
+                    <hr>
+                    <p class="card-text">Artista: {{ disk.artist }}</p>
+                    <p class="card-text">Año: {{ disk.year }}</p>
+                    <p class="card-text">Descripción: {{ disk.description }}</p>
+                    <button class="btn btn-secondary btn-lg mt-5" (click)="toggleLike(disk)">
+                        {{ disk.like ? '🤍' : 'Me gusta' }}
+                    </button>
+                </div>
+            </div>
+        </div>
         }@empty{
         <p>No hay discos para mostrar.</p>
         }
-    </ul>
-
+    </div>
     }
-    
+
+
 
 </main>
