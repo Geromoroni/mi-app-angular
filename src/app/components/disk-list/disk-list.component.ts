@@ -89,4 +89,5 @@ export class DiskListComponent {
   toggleLike(disk: Disk) {
     disk.like = !disk.like;
   }
+  
 }

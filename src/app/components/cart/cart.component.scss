@@ -5,4 +5,32 @@ color: #263963;
     //color: white;
     padding: 10px;
     border-radius: 5px;
+    
+    margin-top: 80px;
+    margin-bottom: 35px;
+
+}
+
+.card{
+    margin-left: 100px;
+}
+.col-md-8{
+    background-color:#7cc6e9;
+    border: red($color: #000000)
+}
+.col-md-4 {
+  position: relative; 
+}
+
+.card {
+  position: relative; 
+border-color: rgba(0, 0, 0, 0.61);
+
+}
+
+button {
+  position: absolute; 
+  top: 8px; 
+  right: 8px; 
+  z-index: 1; 
 }

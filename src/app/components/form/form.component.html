@@ -1,3 +1,4 @@
+<h3>Unete para recibir informacion de tus discos favoritos!</h3>
 <form [formGroup]="formSignUp" (submit)="onSubmit()">
     <div class="form-group" [class.invalid]="formSignUp.get('username')?.invalid">
     <label for="username">Nombre</label>
@@ -16,7 +17,7 @@
     <label  for="password">Password</label>
     <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password">
   <div>
-      <p *ngIf="formSignUp.get('password')?.hasError('required')">La contraseña es requerida</p>
+      <p *ngIf="formSignUp.get('password')?.hasError('required')">La contraseña es requerida!</p>
       <p *ngIf="formSignUp.get('password')?.hasError('minlength')">La contraseña es debe tener mínimo 6 caracteres</p>
 
   </div>
