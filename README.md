@@ -2,7 +2,7 @@
 
 ![Home](src/app/assets/home-angular-app.png)
 
-DiskHub es una aplicación web desarrollada con Angular que permite a los usuarios explorar una lista de álbumes de música, ver sus detalles y agregarlos a una colección personal de favoritos. El proyecto destaca por su estética retro inspirada en los años 70 y su funcionalidad moderna.
+DiskHub es una aplicación web desarrollada con Angular, realizada para un seminario con el fin de aprender el framework. Permite a los usuarios explorar una lista de álbumes de música, ver sus detalles y agregarlos a una colección personal de favoritos. Inspirado en una estética retro de los años 70.
 
 ##  Características Principales
 
