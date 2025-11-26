@@ -2,9 +2,9 @@
 
 ![Home](src/app/assets/home-angular-app.png)
 
-DiskHub es una aplicación web desarrollada con Angular que permite a los usuarios explorar una lista de álbumes de música, ver sus detalles y agregarlos a una colección personal de favoritos. El proyecto destaca por su estética retro inspirada en los años 70 y su funcionalidad moderna.
+DiskHub es una aplicación web desarrollada con Angular, realizada para un seminario con el fin de aprender el framework. Permite a los usuarios explorar una lista de álbumes de música, ver sus detalles y agregarlos a una colección personal de favoritos. Inspirado en una estética retro de los años 70.
 
-## ✨ Características Principales
+##  Características Principales
 
 - **Interfaz Retro:** Diseño visualmente atractivo con animaciones y estilos que evocan la era del vinilo.
 - **Lista de Discos:** Visualiza una colección de discos con su carátula, artista, año y descripción.
@@ -15,7 +15,7 @@ DiskHub es una aplicación web desarrollada con Angular que permite a los usuari
 
 ![Registro](src/app/assets/registro-angular-app.png)
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 Este proyecto fue construido utilizando las siguientes tecnologías:
 
@@ -31,24 +31,3 @@ Este proyecto fue construido utilizando las siguientes tecnologías:
 - **SCSS:** Preprocesador de CSS que permite usar variables, anidación y mixins para escribir estilos más organizados y reutilizables.
 
 - **Bootstrap:** Utilizado para el sistema de grid y algunos componentes base, facilitando el diseño responsivo.
-
-## 🚀 Cómo ejecutar el proyecto localmente
-
-Sigue estos pasos para tener una copia del proyecto funcionando en tu máquina.
-
-1. **Clona el repositorio:**
-   ```bash
-   git clone <URL-DE-TU-REPOSITORIO>
-   ```
-
-2. **Instala las dependencias:**
-   Navega a la carpeta del proyecto y ejecuta:
-   ```bash
-   npm install
-   ```
-
-3. **Inicia el servidor de desarrollo:**
-   ```bash
-   ng serve -o
-   ```
-   La aplicación se abrirá automáticamente en tu navegador en `http://localhost:4200/`.
