@@ -1,5 +1,12 @@
-
-body{
-    background-color:#7cc6e9;
+body {
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    linear-gradient(135deg, #f9d67a 0%, #f39c6b 50%, #e8626d 100%);
+  min-height: 100vh;
 }
-

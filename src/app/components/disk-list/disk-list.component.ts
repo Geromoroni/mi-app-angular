@@ -17,6 +17,8 @@ export class DiskListComponent {
   }
 
 
+  
+
   mostrar: boolean = false;
 
 

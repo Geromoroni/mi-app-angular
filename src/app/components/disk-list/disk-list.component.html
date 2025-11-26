@@ -1,31 +1,40 @@
-<h1 class="title-disks">Discos</h1>
-<button (click)="toggleView($event)" class="button1 btn btn-secondary btn-lg mt-5">
-    {{ mostrar ? 'Ocultar discos' : 'Mostrar discos' }}
-</button>
-<main>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ropa+Sans:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Added retro styling classes while maintaining all Angular functionality -->
+<div class="retro-header" (click)="toggleView($event)">
+  <h1 class="retro-title-disks">
+    <span class="vinyl-decoration">⚫</span>
+    Discos
+    <span class="vinyl-decoration">⚫</span>
+  </h1>
+  <button class="retro-toggle-button">
+    <span class="retro-chevron" [class.rotated]="mostrar"></span>
+  </button>
+</div>
+
+<main class="retro-main">
     @if (mostrar) {
     <div class="row">
         @for (disk of disks; track disk.title) {
-        <div class="col-12 col-sm-6 mb-4">
-            <div class="card h-100">
-                <img class="card-img-top" [src]="disk.image" alt="{{ disk.title }}" width="200">
-                <div class="card-body">
-                    <h2 class="card-title">{{ disk.title }}</h2>
-                    <hr>
-                    <p class="card-text">Artista: {{ disk.artist }}</p>
-                    <p class="card-text">Año: {{ disk.year }}</p>
-                    <p class="card-text">Descripción: {{ disk.description }}</p>
-                 <app-input [disk]="disk" (likeToggled)="onLikeToggled($event)"></app-input>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="retro-card">
+                <div class="retro-card-img-wrapper">
+                    <img class="retro-card-img" [src]="disk.image" alt="{{ disk.title }}">
+                </div>
+                <div class="retro-card-body">
+                    <h2 class="retro-card-title">{{ disk.title }}</h2>
+                    <p class="retro-card-artist">🎤 {{ disk.artist }}</p>
+                    <p class="retro-card-year">📅 {{ disk.year }}</p>
+                    <p class="retro-card-description">{{ disk.description }}</p>
+                    <app-input [disk]="disk" (likeToggled)="onLikeToggled($event)"></app-input>
                 </div>
             </div>
         </div>
         }@empty{
-        <p>No hay discos para mostrar.</p>
+        <p class="retro-empty-message">No hay discos para mostrar.</p>
         }
     </div>
     }
-    
-
-
-
 </main>

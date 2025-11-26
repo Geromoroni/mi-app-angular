@@ -1,59 +1,54 @@
-# Miapp
+# DiskHub - Colección de Discos Retro
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+![Home](src/app/assets/home-angular-app.png)
 
-## Development server
+DiskHub es una aplicación web desarrollada con Angular que permite a los usuarios explorar una lista de álbumes de música, ver sus detalles y agregarlos a una colección personal de favoritos. El proyecto destaca por su estética retro inspirada en los años 70 y su funcionalidad moderna.
 
-To start a local development server, run:
+## ✨ Características Principales
 
-```bash
-ng serve
-```
+- **Interfaz Retro:** Diseño visualmente atractivo con animaciones y estilos que evocan la era del vinilo.
+- **Lista de Discos:** Visualiza una colección de discos con su carátula, artista, año y descripción.
+- **Sección de Favoritos:** Los usuarios pueden marcar discos como "favoritos" y estos se añaden a una sección personal.
+- **Gestión de Estado:** La lista de favoritos se gestiona a través de un servicio de Angular, manteniendo el estado de la aplicación de forma centralizada.
+- **Formulario de Registro Reactivo:** Un formulario para que los usuarios se registren, construido con **Angular Reactive Forms**, incluyendo validaciones en tiempo real.
+- **Diseño Responsivo:** La aplicación se adapta a diferentes tamaños de pantalla, desde móviles hasta escritorios.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+![Registro](src/app/assets/registro-angular-app.png)
 
-## Code scaffolding
+## 🛠️ Tecnologías Utilizadas
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Este proyecto fue construido utilizando las siguientes tecnologías:
 
-```bash
-ng generate component component-name
-```
+- **[Angular](https://angular.io/):** El framework principal para construir la aplicación single-page (SPA).
+  - **Componentes Standalone:** La arquitectura moderna de Angular para componentes más modulares y sencillos.
+  - **Enrutamiento de Angular:** Para navegar entre la vista de discos y el formulario de registro.
+  - **Servicios e Inyección de Dependencias:** Utilizado para gestionar el estado de los discos favoritos (`FavoriteDisksService`).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Angular Reactive Forms:** Para crear el formulario de registro. Permite manejar validaciones complejas, como la confirmación de contraseñas, de una manera robusta y escalable.
 
-```bash
-ng generate --help
-```
+- **TypeScript:** Para añadir tipado estático a JavaScript, mejorando la calidad y mantenibilidad del código.
 
-## Building
+- **SCSS:** Preprocesador de CSS que permite usar variables, anidación y mixins para escribir estilos más organizados y reutilizables.
 
-To build the project run:
+- **Bootstrap:** Utilizado para el sistema de grid y algunos componentes base, facilitando el diseño responsivo.
 
-```bash
-ng build
-```
+## 🚀 Cómo ejecutar el proyecto localmente
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Sigue estos pasos para tener una copia del proyecto funcionando en tu máquina.
 
-## Running unit tests
+1. **Clona el repositorio:**
+   ```bash
+   git clone <URL-DE-TU-REPOSITORIO>
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2. **Instala las dependencias:**
+   Navega a la carpeta del proyecto y ejecuta:
+   ```bash
+   npm install
+   ```
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Inicia el servidor de desarrollo:**
+   ```bash
+   ng serve -o
+   ```
+   La aplicación se abrirá automáticamente en tu navegador en `http://localhost:4200/`.

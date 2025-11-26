@@ -1,24 +1,55 @@
-<h1 class="title-card">Discos Favoritos</h1>
-<div class="row">
-  <div class="col-12 mb-3" *ngFor="let disk of getFavorites()">
-    <div class="card mb-3 position-relative" style="max-width: 540px;">
-      <button 
-        class="btn btn-secondary position-absolute" 
-        (click)="removeFromFavorites(disk)">
-        💔
-      </button>
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img [src]="disk.image" class="img-fluid rounded-start h-100" [alt]="disk.title">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{ disk.title }}</h5>
-            <p class="card-text">Artista: {{ disk.artist }}</p>
-            <p class="card-text">Año: {{ disk.year }}</p>
+<div class="retro-container">
+  <div class="retro-header">
+    <h1 class="title-cart">
+      <span class="vinyl-icon">🎵</span>
+      MIS DISCOS FAVORITOS
+      <span class="vinyl-icon">🎵</span>
+    </h1>
+    <div class="subtitle-retro">COLECCIÓN PERSONAL</div>
+  </div>
+
+  <div class="favorites-grid">
+    @for (disk of getFavorites(); track disk.title) {
+    <div class="retro-card">
+      <div class="card-border">
+        <div class="card-content">
+          <div class="image-container">
+            <div class="vinyl-effect"></div>
+            <img [src]="disk.image" [alt]="disk.title" class="disk-image">
+          </div>
+          <div class="info-section">
+            <button
+              class="retro-close-btn"
+              aria-label="Close"
+              (click)="removeFromFavorites(disk)">
+              ✕
+            </button>
+            <h2 class="disk-title">{{ disk.title }}</h2>
+            <div class="disk-details">
+              <p class="detail-row">
+                <span class="label">ARTISTA:</span>
+                <span class="value">{{ disk.artist }}</span>
+              </p>
+              <p class="detail-row">
+                <span class="label">AÑO:</span>
+                <span class="value">{{ disk.year }}</span>
+              </p>
+            </div>
+            <div class="vinyl-decoration">
+              <div class="groove"></div>
+              <div class="groove"></div>
+              <div class="groove"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    } @empty {
+    <div class="empty-state">
+      <div class="empty-vinyl">💿</div>
+      <p class="empty-text">TU COLECCIÓN ESTÁ VACÍA</p>
+      <p class="empty-subtext">Agrega discos a tus favoritos para verlos aquí</p>
+    </div>
+    }
   </div>
 </div>

@@ -1,33 +1,49 @@
-<h3>Unete para recibir informacion de tus discos favoritos!</h3>
-<form [formGroup]="formSignUp" (submit)="onSubmit()">
-    <div class="form-group" [class.invalid]="formSignUp.get('username')?.invalid">
-    <label for="username">Nombre</label>
-    <input  type="text" formControlName="username" class="form-control" placeholder="Enter username">
+<!-- Added retro styling classes while maintaining all form functionality -->
+<div class="retro-form-container mx-auto">
+  <div class="retro-form-header">
+    <span class="vinyl-icon">⚫</span>
+    <h3 class="retro-form-title">¡Únete para recibir información de tus discos favoritos!</h3>
+    <span class="vinyl-icon">⚫</span>
   </div>
-
-    <div class="form-group" [class.invalid]="formSignUp.get('email')?.invalid">
-    <label for="email">Email</label>
-    <input type="email" formControlName ="email" class="form-control" placeholder="Enter email" >
-   <div class="error-message">
-      <p *ngIf="formSignUp.get('email')?.hasError('required')">El email es requerido</p>
-      <p *ngIf="formSignUp.get('email')?.hasError('email')">El formato no es válido</p>
-    </div>
-  </div>
-  <div [class.invalid]="formSignUp.get('password')?.invalid" class="form-group">
-    <label  for="password">Password</label>
-    <input type="password" formControlName="password" id="password" class="form-control" placeholder="Password">
-  <div>
-      <p *ngIf="formSignUp.get('password')?.hasError('required')">La contraseña es requerida!</p>
-      <p *ngIf="formSignUp.get('password')?.hasError('minlength')">La contraseña es debe tener mínimo 6 caracteres</p>
-
-  </div>
-  </div>
-  <div class="form-group">
-        <label for="confirmPassword">Confirmar Password</label>
-        <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
-        <div class="error-message">
-      <p *ngIf="formSignUp.hasError('passwordMismatch')">Las contraseñas no coinciden</p>
+  
+  <form [formGroup]="formSignUp" (ngSubmit)="onSubmit()" class="retro-form">
+    <div class="mb-4">
+      <label for="username" class="retro-label">Nombre de usuario</label>
+      <input type="text" id="username" formControlName="username" class="retro-input" placeholder="Tu nombre de usuario">
+      <div *ngIf="formSignUp.get('username')?.invalid && formSignUp.get('username')?.touched" class="retro-feedback">
+        <p *ngIf="formSignUp.get('username')?.hasError('required')">⚠️ El nombre de usuario es requerido.</p>
       </div>
     </div>
-  <button [disabled]= "formSignUp.invalid" type="submit" class="btn btn-primary">Submit</button>
-</form>
+    
+    <div class="mb-4">
+      <label for="email" class="retro-label">Email</label>
+      <input type="email" id="email" formControlName="email" class="retro-input" placeholder="tu@email.com">
+      <div *ngIf="formSignUp.get('email')?.invalid && formSignUp.get('email')?.touched" class="retro-feedback">
+        <p *ngIf="formSignUp.get('email')?.hasError('required')">⚠️ El email es requerido.</p>
+        <p *ngIf="formSignUp.get('email')?.hasError('email')">⚠️ El formato del email no es válido.</p>
+      </div>
+    </div>
+    
+    <div class="mb-4">
+      <label for="password" class="retro-label">Contraseña</label>
+      <input type="password" id="password" formControlName="password" class="retro-input" placeholder="Contraseña">
+      <div *ngIf="formSignUp.get('password')?.invalid && formSignUp.get('password')?.touched" class="retro-feedback">
+        <p *ngIf="formSignUp.get('password')?.hasError('required')">⚠️ La contraseña es requerida.</p>
+        <p *ngIf="formSignUp.get('password')?.hasError('minlength')">⚠️ La contraseña debe tener mínimo 6 caracteres.</p>
+      </div>
+    </div>
+    
+    <div class="mb-4">
+      <label for="confirmPassword" class="retro-label">Confirmar Contraseña</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="retro-input" placeholder="Confirma tu contraseña">
+      <div *ngIf="formSignUp.hasError('passwordMismatch') && formSignUp.get('confirmPassword')?.touched" class="retro-feedback">
+        <p>⚠️ Las contraseñas no coinciden.</p>
+      </div>
+    </div>
+    
+    <button [disabled]="formSignUp.invalid" type="submit" class="retro-submit-button">
+      <span class="button-text">Registrarse</span>
+      <span class="button-icon">→</span>
+    </button>
+  </form>
+</div>

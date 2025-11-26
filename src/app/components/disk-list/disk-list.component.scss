@@ -1,41 +1,238 @@
-.h1{
-    background-color: red;
+.retro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px;
+  margin-right: 20px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #fbb040 100%);
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  border: 5px solid #263963;
+  box-shadow: 0 8px 0 rgba(38, 57, 99, 0.3),
+              0 12px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 0 rgba(38, 57, 99, 0.3),
+                0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    pointer-events: none;
+  }
 }
-.title-disks {
-color: #263963; 
 
-    text-align: center;
-    //color: white;
-    padding: 10px;
-    border-radius: 5px;
-    
+.retro-title-disks {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 
+    4px 4px 0 #263963,
+    8px 8px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 4px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.button1 {
-    background-color: #263963; 
-    color: white;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+.vinyl-decoration {
+  font-size: 32px;
+  animation: spin 3s linear infinite;
+  display: inline-block;
 }
-.card-body{
-    background-color:#47a5d1ad;
-    border-color: black;
-      flex: 1 1 auto;
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.retro-toggle-button {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border: 3px solid #263963;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(38, 57, 99, 0.3);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 4px 4px 0 rgba(38, 57, 99, 0.3);
+  }
+}
+
+.retro-chevron {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-style: solid;
+  border-color: #263963;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.retro-chevron.rotated {
+  transform: rotate(-135deg);
+}
+
+.retro-main {
+  position: relative;
+  margin-right: 20px;
+}
+
+.retro-card {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe5cc 100%);
+  border: 5px solid #263963;
+  border-radius: 20px;
+  box-shadow: 0 8px 0 rgba(38, 57, 99, 0.3),
+              0 12px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  transform: rotate(-1deg);
+  
+  &:nth-child(even) {
+    transform: rotate(1deg);
+  }
+  
+  &:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 0 rgba(38, 57, 99, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.3);
+  }
 }
-.card {
-      height: 100%;
+
+.retro-card-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #000;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-radial-gradient(
+      circle at center,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.retro-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  
+  .retro-card:hover & {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+
+
+.retro-card-body {
+  background: linear-gradient(135deg, #ffe5cc 0%, #ffd4a3 100%);
+  padding: 25px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-    border-color: rgba(0, 0, 0, 0.562) !important;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      #263963 0px,
+      #263963 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+}
+
+.retro-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #263963;
+  margin-bottom: 15px;
+  text-shadow: 
+    2px 2px 0 #ff6b35,
+    4px 4px 0 rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.retro-card-artist {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6b35;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 0 rgba(38, 57, 99, 0.2);
+}
+
+.retro-card-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f7931e;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 0 rgba(38, 57, 99, 0.2);
+}
+
+.retro-card-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #263963;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
 }
 
 
-.card-body button {
-  background-color: #263963; 
-  margin-top: auto;
+.retro-empty-message {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: #263963;
+  text-align: center;
+  padding: 50px;
+  text-shadow: 2px 2px 0 #ff6b35;
 }
-

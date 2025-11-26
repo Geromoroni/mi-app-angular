@@ -1,26 +1,151 @@
+.retro-navbar {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #fbb040 100%);
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 15px 10px;
+  border-bottom: 5px solid #263963;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3),
+              0 12px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      #263963 0px,
+      #263963 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+}
 
-.h1 {
-    background-color: red;
-}
-.form-control{
-    background-color:#47a5d1ad;
-    border-color: transparent;
+.retro-brand {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 
+    3px 3px 0 #263963,
+    6px 6px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    text-shadow: 
+      3px 3px 0 #263963,
+      6px 6px 0 rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.5);
+  }
 }
 
-.btn{
-    color: black;
-    border-color: rgba(0, 0, 0, 0.507);
-    
+.vinyl-icon {
+  font-size: 28px;
+  animation: spin 4s linear infinite;
+  display: inline-block;
 }
-a.nav-link {
-  pointer-events: auto !important;
-  cursor: pointer !important;
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
-.btn-form {
-    color: black;
-    border:none;
-    text-decoration: none;
-    background-color: none;
- font-size: 1.3rem;
-  padding: 1rem 2rem;
+
+.retro-badge {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #263963;
+  font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 2px solid #263963;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.nav-item {
+  font-size: 22px;
+  margin: 0 8px;
+}
+
+.retro-link {
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 2px 2px 0 rgba(38, 57, 99, 0.5);
+  
+  &:hover {
+    color: #fff;
+    background: rgba(38, 57, 99, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  &:hover::after {
+    width: 80%;
+  }
+}
+
+.link-icon {
+  font-size: 18px;
+  filter: drop-shadow(1px 1px 0 rgba(38, 57, 99, 0.5));
+}
+
+.retro-toggler {
+  border: 2px solid #fff;
+  background: rgba(38, 57, 99, 0.5);
+  
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+  }
+}
+
+.retro-container {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      #ff6b35 0px,
+      #ff6b35 15px,
+      transparent 15px,
+      transparent 30px
+    );
+    opacity: 0.3;
+  }
 }

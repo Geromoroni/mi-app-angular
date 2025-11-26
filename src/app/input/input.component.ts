@@ -1,11 +1,13 @@
 import { Component, Input,Output, EventEmitter } from '@angular/core';
 import { FavoriteDisksService } from '../services/favorite-disks.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-input',
   standalone: true,
   templateUrl: './input.component.html',
-  styleUrl: './input.component.scss'
+  styleUrl: './input.component.scss',
+  imports: [CommonModule]
 })
 export class InputComponent {
   @Input() disk: any; // Recibe el disco desde el componente padre
@@ -21,5 +23,3 @@ export class InputComponent {
   this.disk.like = !this.disk.like; // Cambia el estado local
 }
 }
-
-

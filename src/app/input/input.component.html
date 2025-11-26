@@ -1,6 +1,7 @@
 <button 
-  class="btn btn-secondary btn-lg mt-5" 
-  (click)="toggleLike()" 
-  [disabled]="favoriteDisksService.isFavorite(disk)">
-  {{ disk.like ? '🤍' : 'Me gusta' }}
+  class="retro-like-button" 
+  (click)="toggleLike()">
+  <span class="like-icon" [class.liked]="disk.like">🤍</span>
+  <span class="like-text">{{ disk.like ? 'Agregado' : 'Me gusta' }}</span>
 </button>
+  
